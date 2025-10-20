@@ -127,16 +127,48 @@
         
         @media (max-width: 768px) {
             .hero-bg {
-                background: linear-gradient(135deg, rgba(210, 105, 30, 0.3) 0%, rgba(255, 248, 220, 0.8) 100%),
-                            url('school_building.jpg') center/cover no-repeat;
+                background: linear-gradient(135deg, rgba(210, 105, 30, 0.4) 0%, rgba(255, 248, 220, 0.85) 100%),
+                            url('resources/school_building.jpg') center/cover no-repeat;
+                min-height: 70vh;
             }
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
                 line-height: 1.2;
-                margin-top: 2rem;
             }
             .hero-subtitle {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
+            }
+            .stat-card {
+                padding: 1.5rem;
+            }
+            .leadership-card {
+                padding: 1.5rem;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 64px;
+                right: 0;
+                height: calc(100vh - 64px);
+                width: 80%;
+                max-width: 300px;
+                background-color: white;
+                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 1000;
+                overflow-y: auto;
+            }
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -188,194 +220,144 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg flex items-center justify-center relative">
+    <section class="hero-bg flex items-center justify-center relative min-h-[70vh] md:min-h-[80vh]">
         <div class="hero-overlay absolute inset-0"></div>
-        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-            <h1 class="hero-title text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg" data-editable="hero-title" style="padding-top: 80px;">
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto py-20">
+            <h1 class="hero-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 drop-shadow-lg" data-editable="hero-title">
                 CENTRAL ACADEMY SCHOOL
             </h1>
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium mb-4 drop-shadow-md" data-editable="hero-subtitle">
+            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mb-3 md:mb-4 drop-shadow-md" data-editable="hero-subtitle">
                 SIMDEGA
             </h2>
-            <p class="text-xl md:text-2xl mb-6 drop-shadow-md" data-editable="hero-tagline1">
-                Excellence in Education
+            <p class="text-lg sm:text-xl md:text-2xl mb-3 md:mb-6 drop-shadow-md" data-editable="hero-tagline1">
+                Excellence in Education Since 2012
             </p>
-            <p class="text-lg md:text-xl mb-8 drop-shadow-md" data-editable="hero-tagline2">
+            <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 drop-shadow-md" data-editable="hero-tagline2">
                 Nurturing Young Minds
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="about.html" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform">
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+                <a href="about.html" class="btn-primary text-white px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold text-base md:text-lg hover:scale-105 transition-transform">
                     Learn More
                 </a>
-                <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform">
+                <a href="contact.html" class="bg-white text-primary px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold text-base md:text-lg hover:scale-105 transition-transform">
                     Contact Us
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="py-16 bg-white">
+    <!-- Excellence Stats Section -->
+    <section class="py-12 md:py-16 bg-gradient-to-r from-orange-600 to-orange-500 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Students Count -->
-                <div class="stat-card text-center p-8 rounded-lg animate-on-scroll">
-                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-                        <span class="stat-number">500+</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">500+ Students</h3>
-                    <p class="text-gray-600">Growing learning community</p>
-                </div>
-                
-                <!-- Teachers Count -->
-                <div class="stat-card text-center p-8 rounded-lg animate-on-scroll">
-                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-                        <span class="stat-number">15+</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">15+ Teachers</h3>
-                    <p class="text-gray-600">Dedicated educators</p>
-                </div>
-                
-                <!-- Classes Count -->
-                <div class="stat-card text-center p-8 rounded-lg animate-on-scroll">
-                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-                        <span class="stat-number">12+</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">15+ Classrooms</h3>
-                    <p class="text-gray-600">Modern learning spaces</p>
-                </div>
-                
-                <!-- Facilities -->
-                <div class="stat-card text-center p-8 rounded-lg animate-on-scroll">
-                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Park & Playground</h3>
-                    <p class="text-gray-600">For lower classes</p>
-                </div>
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-4 animate-on-scroll">
+                    About Our School
+                </h2>
+                <p class="text-lg sm:text-xl md:text-2xl mb-4 md:mb-8 animate-on-scroll">
+                    Excellence in Education Since 2012
+                </p>
             </div>
             
-            <div class="text-center mt-12">
-                <p class="text-lg text-gray-700">
-                    <strong>Classes:</strong> Nursery to Class 10
-                </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div class="animate-on-scroll">
+                    <div class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">12+</div>
+                    <div class="text-base sm:text-lg md:text-xl font-medium">Years of Excellence</div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">500+</div>
+                    <div class="text-base sm:text-lg md:text-xl font-medium">Students Educated</div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">15+</div>
+                    <div class="text-base sm:text-lg md:text-xl font-medium">Expert Teachers</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Preview Section -->
-    <section class="py-16 bg-white">
+    <!-- Welcome Section -->
+    <section class="py-12 md:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 animate-on-scroll">
-                    About Central Academy School
-                </h2>
-                <p class="text-lg text-gray-600 animate-on-scroll max-w-3xl mx-auto">
-                    Central Academy School, Simdega, established in 2012, is a leading English medium school 
-                    affiliated to CBSE, New Delhi. We are committed to providing quality education that 
-                    nurtures intellectual curiosity, fosters creativity, and develops strong moral values.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="animate-on-scroll">
-                    <img src="school_building.jpg" alt="Central Academy School Building" 
-                         class="w-full h-96 object-cover rounded-lg shadow-lg" loading="lazy">
-                </div>
-                
-                <div class="animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Mission & Vision</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="animate-on-scroll order-2 lg:order-1">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+                        Welcome to Central Academy School
+                    </h2>
+                    <p class="text-base sm:text-lg text-gray-600 mb-4 md:mb-6">
+                        Established in 2012 by our visionary Director and Principal <strong>Janki Sinha</strong>, 
+                        Central Academy School has been a beacon of quality education in Simdega. We are committed to 
+                        nurturing young minds and preparing them for a bright future.
+                    </p>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6 md:mb-8">
+                        As an English medium institution, we provide comprehensive education from Nursery to Class 10, 
+                        focusing on academic excellence, character development, and holistic growth of every student.
+                    </p>
                     
-                    <div class="mb-8">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-bullseye text-orange-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Our Mission</h4>
-                                <p class="text-gray-600 leading-relaxed">
-                                    To provide quality education that nurtures intellectual curiosity, fosters creativity, 
-                                    and develops strong moral values. We aim to create a learning environment where every 
-                                    child can achieve their full potential and become a responsible global citizen.
-                                </p>
-                            </div>
+                    <div class="grid grid-cols-2 gap-4 md:gap-6">
+                        <div class="text-center p-3 md:p-4 bg-orange-50 rounded-lg">
+                            <div class="text-lg sm:text-xl md:text-2xl font-bold text-orange-600 mb-1 md:mb-2">English Medium</div>
+                            <p class="text-xs sm:text-sm text-gray-600">Quality English education</p>
+                        </div>
+                        <div class="text-center p-3 md:p-4 bg-blue-50 rounded-lg">
+                            <div class="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 mb-1 md:mb-2">Nursery - Class 10</div>
+                            <p class="text-xs sm:text-sm text-gray-600">Complete school education</p>
                         </div>
                     </div>
                     
-                    <div class="mb-8">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-eye text-blue-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Our Vision</h4>
-                                <p class="text-gray-600 leading-relaxed">
-                                    To be the leading educational institution in Simdega, known for academic excellence, 
-                                    innovative teaching methods, and holistic development of students. We envision creating 
-                                    future leaders who will contribute positively to society.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="text-center p-4 bg-orange-50 rounded-lg">
-                            <div class="text-2xl font-bold text-orange-600 mb-2">English Medium</div>
-                            <p class="text-sm text-gray-600">Quality English education</p>
-                        </div>
-                        <div class="text-center p-4 bg-blue-50 rounded-lg">
-                            <div class="text-2xl font-bold text-blue-600 mb-2">Nursery - Class 10</div>
-                            <p class="text-sm text-gray-600">Complete school education</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <a href="about.html" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform inline-block">
+                    <div class="mt-6 md:mt-8">
+                        <a href="about.html" class="btn-primary text-white px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold text-base md:text-lg hover:scale-105 transition-transform inline-block">
                             Learn More About Us
                         </a>
                     </div>
                 </div>
+                
+                <div class="animate-on-scroll order-1 lg:order-2">
+                    <img src="resources/school_building.jpg" alt="Central Academy School Building" 
+                         class="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-lg" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
+
+
     <!-- School Leadership Preview -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-12 md:py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 animate-on-scroll">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4 animate-on-scroll">
                     School Leadership
                 </h2>
-                <p class="text-lg text-gray-600 animate-on-scroll">
+                <p class="text-base sm:text-lg text-gray-600 animate-on-scroll">
                     Meet the visionary leaders behind our success
                 </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="leadership-card rounded-lg p-8 text-center animate-on-scroll">
-                    <div class="w-32 h-32 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-tie text-orange-600 text-4xl"></i>
+                <div class="leadership-card rounded-lg p-6 md:p-8 text-center animate-on-scroll">
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                        <i class="fas fa-user-tie text-orange-600 text-3xl sm:text-4xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Mrs. Janki Sinha</h3>
-                    <p class="text-orange-600 font-semibold mb-4">Director & Principal</p>
-                    <p class="text-gray-600 leading-relaxed mb-6 max-w-2xl mx-auto">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Mrs. Janki Sinha</h3>
+                    <p class="text-orange-600 font-semibold mb-3 md:mb-4 text-sm sm:text-base">Director & Principal</p>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 max-w-2xl mx-auto">
                         Mrs. Janki Sinha founded Central Academy School in 2012 with a vision to provide 
                         quality education to the children of Simdega. With over a decade of experience in 
                         education, she has been instrumental in shaping the school's philosophy and ensuring 
                         academic excellence.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center max-w-2xl mx-auto">
+                    <div class="grid grid-cols-3 gap-3 md:gap-6 text-center max-w-2xl mx-auto">
                         <div>
-                            <div class="text-xl font-bold text-orange-600">2012</div>
-                            <p class="text-sm text-gray-600">Founded School</p>
+                            <div class="text-lg sm:text-xl font-bold text-orange-600">2012</div>
+                            <p class="text-xs sm:text-sm text-gray-600">Founded School</p>
                         </div>
                         <div>
-                            <div class="text-xl font-bold text-orange-600">12+</div>
-                            <p class="text-sm text-gray-600">Years Experience</p>
+                            <div class="text-lg sm:text-xl font-bold text-orange-600">12+</div>
+                            <p class="text-xs sm:text-sm text-gray-600">Years Experience</p>
                         </div>
                         <div>
-                            <div class="text-xl font-bold text-orange-600">CBSE</div>
-                            <p class="text-sm text-gray-600">Affiliated</p>
+                            <div class="text-lg sm:text-xl font-bold text-orange-600">CBSE</div>
+                            <p class="text-xs sm:text-sm text-gray-600">Affiliated</p>
                         </div>
                     </div>
                 </div>
@@ -384,27 +366,27 @@
     </section>
 
     <!-- Quick Links Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-12 md:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 animate-on-scroll">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4 animate-on-scroll">
                     Explore Our School
                 </h2>
-                <p class="text-lg text-gray-600 animate-on-scroll">
+                <p class="text-base sm:text-lg text-gray-600 animate-on-scroll">
                     Discover the various aspects of our educational institution
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- About Link -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-on-scroll">
-                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                        <i class="fas fa-school text-6xl text-white"></i>
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-school text-5xl md:text-6xl text-white"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">About Our School</h3>
-                        <p class="text-gray-600 mb-4">Learn about our history, leadership, and educational philosophy.</p>
-                        <a href="about.html" class="btn-primary text-white px-6 py-2 rounded-lg inline-block hover:scale-105 transition-transform">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">About Our School</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4">Learn about our history, leadership, and educational philosophy.</p>
+                        <a href="about.html" class="btn-primary text-white px-5 md:px-6 py-2 rounded-lg inline-block hover:scale-105 transition-transform text-sm md:text-base">
                             Learn More
                         </a>
                     </div>
@@ -412,27 +394,27 @@
                 
                 <!-- Events Link -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-on-scroll">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                        <i class="fas fa-calendar-alt text-6xl text-white"></i>
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-calendar-alt text-5xl md:text-6xl text-white"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">School Events</h3>
-                        <p class="text-gray-600 mb-4">View our latest events, celebrations, and activities.</p>
-                        <a href="events.html" class="btn-primary text-white px-6 py-2 rounded-lg inline-block hover:scale-105 transition-transform">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">School Events</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4">View our latest events, celebrations, and activities.</p>
+                        <a href="events.html" class="btn-primary text-white px-5 md:px-6 py-2 rounded-lg inline-block hover:scale-105 transition-transform text-sm md:text-base">
                             View Events
                         </a>
                     </div>
                 </div>
                 
                 <!-- Routine Link -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-on-scroll">
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                        <i class="fas fa-clock text-6xl text-white"></i>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-on-scroll sm:col-span-2 lg:col-span-1">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-clock text-5xl md:text-6xl text-white"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">School Routine</h3>
-                        <p class="text-gray-600 mb-4">Check our daily schedules and timetables.</p>
-                        <a href="routine.html" class="btn-primary text-white px-6 py-2 rounded-lg inline-block hover:scale-105 transition-transform">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">School Routine</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4">Check our daily schedules and timetables.</p>
+                        <a href="routine.html" class="btn-primary text-white px-5 md:px-6 py-2 rounded-lg inline-block hover:scale-105 transition-transform text-sm md:text-base">
                             View Routine
                         </a>
                     </div>
@@ -442,30 +424,30 @@
     </section>
 
     <!-- Contact Preview Section -->
-    <section class="py-16 bg-primary text-white">
+    <section class="py-12 md:py-16 bg-primary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 animate-on-scroll">
                 Get In Touch
             </h2>
-            <p class="text-xl mb-8 animate-on-scroll">
+            <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 animate-on-scroll">
                 Have questions? We'd love to hear from you.
             </p>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
-                <div class="flex items-center animate-on-scroll">
-                    <i class="fas fa-phone text-2xl mr-3"></i>
-                    <div>
-                        <p class="font-semibold contact-phone" data-phone="1">9608508156</p>
-                        <p class="contact-phone" data-phone="2">8789508120</p>
+            <div class="flex flex-col gap-4 md:flex-row md:justify-center md:items-center md:gap-8 mb-6 md:mb-8">
+                <div class="flex items-center justify-center animate-on-scroll">
+                    <i class="fas fa-phone text-xl md:text-2xl mr-3"></i>
+                    <div class="text-left">
+                        <p class="font-semibold contact-phone text-sm md:text-base" data-phone="1">9608508156</p>
+                        <p class="contact-phone text-sm md:text-base" data-phone="2">8789508120</p>
                     </div>
                 </div>
-                <div class="flex items-center animate-on-scroll">
-                    <i class="fas fa-envelope text-2xl mr-3"></i>
-                    <div>
-                        <p class="contact-email">centralacademyschoolsimdega@gmail.com</p>
+                <div class="flex items-center justify-center animate-on-scroll">
+                    <i class="fas fa-envelope text-xl md:text-2xl mr-3"></i>
+                    <div class="text-left">
+                        <p class="contact-email text-xs sm:text-sm md:text-base break-all">centralacademyschoolsimdega@gmail.com</p>
                     </div>
                 </div>
             </div>
-            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform inline-block animate-on-scroll">
+            <a href="contact.html" class="bg-white text-primary px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold text-base md:text-lg hover:scale-105 transition-transform inline-block animate-on-scroll">
                 Contact Us
             </a>
         </div>
